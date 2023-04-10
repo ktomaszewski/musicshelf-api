@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+    php:
+        container_name: musicshelf-api-php
+        build:
+            context: docker/php
+            args:
+                MSA_DOCKER_PHP_PROJECT_ROOT: ${MSA_DOCKER_PHP_PROJECT_ROOT}
+                MSA_DOCKER_PHP_APACHE_DOCUMENT_ROOT: ${MSA_DOCKER_PHP_APACHE_DOCUMENT_ROOT}
+        ports:
+            - "8080:80"
+        volumes:
+            - ".:/var/www/musicshelf-api"
+        networks:
+            - api-network
+
+networks:
+    api-network:
+        name: musicshelf-api-network
+        driver: bridge
