@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
     php:
-        container_name: musicshelf-api-php
+        container_name: msa-api-php
         build:
             context: docker/php
             args:
@@ -13,9 +13,22 @@ services:
         volumes:
             - ".:/var/www/musicshelf-api"
         networks:
-            - api-network
+            - msa-api
+    mysql:
+        container_name: msa-api-mysql
+        build:
+            context: docker/mysql
+            args:
+                MSA_DOCKER_MYSQL_ROOT_PASSWORD: ${MSA_DOCKER_MYSQL_ROOT_PASSWORD}
+        restart: always
+        ports:
+            - "33006:3306"
+        volumes:
+            - "./var/mysql:/var/lib/mysql"
+        networks:
+            - msa-api
 
 networks:
-    api-network:
-        name: musicshelf-api-network
+    msa-api:
+        name: msa-api
         driver: bridge
