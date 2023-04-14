@@ -1,0 +1,11 @@
+# IDE
+.idea/
+
+# Docker
+docker-compose.yml
+## MySQL
+var/mysql/*
+!var/mysql/.gitkeep
+
+# ENV
+.env.local*
