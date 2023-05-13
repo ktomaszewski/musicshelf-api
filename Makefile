@@ -1,3 +1,4 @@
+MAKE = make
 DOCKER_COMPOSE = docker-compose --env-file=.env.local
 
 .PHONY: build
@@ -11,3 +12,7 @@ up:
 .PHONY: down
 down:
 	$(DOCKER_COMPOSE) down
+
+.PHONY: restart
+restart:
+	$(MAKE) down && $(MAKE) up

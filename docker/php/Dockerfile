@@ -10,7 +10,9 @@ RUN apt update && \
 RUN apt install -y libicu-dev && \
     docker-php-ext-configure intl && \
     docker-php-ext-install intl && \
-    docker-php-ext-enable intl
+    docker-php-ext-enable intl && \
+    pecl install xdebug && \
+    docker-php-ext-enable xdebug
 # OS -- cleaning
 RUN apt clean && \
     rm -rf /var/lib/apt/lists/*
