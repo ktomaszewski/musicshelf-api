@@ -1,11 +1,14 @@
 # IDE
 .idea/
 
+# ENV
+.env.local*
+
+# PHP
+vendor/
+
 # Docker
 docker-compose.yml
 ## MySQL
 var/mysql/*
 !var/mysql/.gitkeep
-
-# ENV
-.env.local*

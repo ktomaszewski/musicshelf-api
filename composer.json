@@ -1,0 +1,18 @@
+{
+    "name": "ktomaszewski/musicshelf-api",
+    "description": "Musicshelf API",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ktomaszewski\\MusicshelfApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kamil Tomaszewski",
+            "email": "tomaszewski.kamil.97@gmail.com"
+        }
+    ],
+    "require": {}
+}
