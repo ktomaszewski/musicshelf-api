@@ -1,0 +1,10 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: false
+        autoconfigure: false
+
+    MusicshelfApi\Controller\HelloWorldController:
+        tags:
+            - { name: controller.service_arguments }

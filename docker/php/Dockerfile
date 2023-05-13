@@ -5,7 +5,7 @@ ARG MSA_DOCKER_PHP_APACHE_DOCUMENT_ROOT
 
 # OS
 RUN apt update && \
-    apt install -y wget
+    apt install -y wget git
 # PHP
 RUN apt install -y libicu-dev && \
     docker-php-ext-configure intl && \
