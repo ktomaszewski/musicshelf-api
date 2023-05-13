@@ -12,7 +12,8 @@ services:
             - "8080:80"
         volumes:
             - ".:/var/www/musicshelf-api"
-            - "./docker/php/config:/usr/local/etc/php/conf.d"
+            - "./docker/php/config/php.ini:/usr/local/etc/php/conf.d/999-php.ini"
+            - "./docker/php/config/xdebug.ini:/usr/local/etc/php/conf.d/999-xdebug.ini"
         networks:
             - msa-api
     mysql:
